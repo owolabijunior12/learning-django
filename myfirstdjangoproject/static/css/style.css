@@ -12,3 +12,32 @@ body{
     height: 100vh;
     font-size: large;
 }
+h1{
+    font-size: xx-large;
+}
+a{
+    color: #ff6f61;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+main{
+    text-align: center;
+}
+footer{
+    position: absolute;
+    bottom: 10px;
+    font-size: small;
+}
+header{
+    
+    top: 10px;
+    font-size: small;
+}
+nav{
+    
+    top: 10px;
+    right: 10px;
+    font-size: small;
+}
