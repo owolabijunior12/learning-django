@@ -1,12 +1,23 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
+
 {% block title %}
-    Post Lists
+    Posts
 {% endblock %}
 
 {% block content %}
+    <section>
     <h1>Posts</h1>
-    <p>This is the posts page.</p>
-    <p>checkout my about <a href="/about">About </a>page</p>
-    <p>checkout my about <a href="/home"> Home </a>page</p>
 
+    {% for post in posts %}
+        <article class="post">
+            <h2>
+                {% comment %} <a href="{%  url 'posts:page' slug=post.slug %}"> {% endcomment %}
+                    {{ post.title }}
+                {% comment %} </a> {% endcomment %}
+            </h2>
+            <p>{{ post.created_at }}</p>
+            <p>{{ post.content }}</p>
+        </article>
+    {% endfor %}
+</section>
 {% endblock %}
