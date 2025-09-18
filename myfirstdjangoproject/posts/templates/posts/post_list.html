@@ -11,9 +11,9 @@
     {% for post in posts %}
         <article class="post">
             <h2>
-                {% comment %} <a href="{%  url 'posts:page' slug=post.slug %}"> {% endcomment %}
+                <a href="{%  url 'posts:page' slug=post.slug %}">
                     {{ post.title }}
-                {% comment %} </a> {% endcomment %}
+                </a>
             </h2>
             <p>{{ post.created_at }}</p>
             <p>{{ post.content }}</p>
