@@ -6,11 +6,11 @@
 
 {% block content %}
     <section>
-        {% comment %} <img 
+        <img 
             class="banner" 
             src="{{ post.banner.url }}" 
             alt="{{ post.title }}"
-        /> {% endcomment %}
+        /> 
         <h1>{{ post.title }}</h1>
         <p>{{  post.created_at }}</p>
         <p>{{ post.content }}</p>
