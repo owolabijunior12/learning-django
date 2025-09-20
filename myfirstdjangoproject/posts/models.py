@@ -10,7 +10,8 @@ class Post(models.Model):
     published = models.BooleanField(default=True)
     author = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
-    tags = models.CharField(max_length=200)    
+    tags = models.CharField(max_length=200)
+    banner = models.ImageField(upload_to='image.png', null=True, blank=True)   
   
 
     def __str__(self):
