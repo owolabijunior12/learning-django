@@ -1,22 +1,13 @@
-from django.shortcuts import render
-from .models import User
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
 
-# Create your views here.
 def register(request):
-    return HttpResponse('Register Page');
-    # if request.method == 'POST':
-    #     username = request.POST.get('username')
-    #     email = request.POST.get('email')
-    #     password = request.POST.get('password')
-        
-    #     # Simple validation (you can expand this)
-    #     if username and email and password:
-    #         user = User(username=username, email=email, password=password)
-    #         user.save()
-    #         return render(request, 'register/success.html', {'user': user})
-    #     else:
-    #         error = "All fields are required."
-    #         return render(request, 'register/register.html', {'error': error})
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('posts:list')  
+    else:
+        form = UserCreationForm()
     
-    # return render(request, 'register/register.html')
+    return render(request, 'register/register.html', {'form': form})
